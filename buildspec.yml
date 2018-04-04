@@ -25,7 +25,7 @@ phases:
       - cd "/go/src/${PACKAGE}"
       # Fetch all dependencies
       - go get -t ./...
-      - ls -lrt
+      - echo $GOPATH; ls -lrt
       # Ensure that the code passes all lint tests
       - golint -set_exit_status
       # Check for common Go problems with 'go vet'
