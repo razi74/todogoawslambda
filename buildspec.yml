@@ -28,7 +28,9 @@ phases:
       # Ensure that the code passes all lint tests
       - golint -set_exit_status
       # Check for common Go problems with 'go vet'
-      - go vet .
+      - go vet addtask
+      - go vet gettask
+      - go vet deletetask
       # Run all tests included with the application
       #- go test .
 
