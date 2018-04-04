@@ -26,6 +26,11 @@ phases:
       # Fetch all dependencies
       - go get -t ./...
       - echo $GOPATH; ls -lrt
+      - go get -u github.com/aws/aws-sdk-go/...
+      - go get -u github.com/rs/xid
+      - go get -u github.com/aws/aws-sdk-go/service/dynamodb
+      - go get -u github.com/aws/aws-sdk-go/aws/session
+      - go get -u github.com/rs/xid
       # Ensure that the code passes all lint tests
       - golint -set_exit_status
       # Check for common Go problems with 'go vet'
