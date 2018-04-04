@@ -36,9 +36,9 @@ phases:
     commands:
       # Build the go application
       #- go build -o main
-      go install addtask
-      go install gettask
-      go install deletetask
+      - go install addtask
+      - go install gettask
+      - go install deletetask
       # Package the application with AWS SAM
       - aws cloudformation package --template-file template.yml --s3-bucket ${S3_BUCKET} --output-template-file packaged.yml
 
