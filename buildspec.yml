@@ -30,12 +30,15 @@ phases:
       # Check for common Go problems with 'go vet'
       - go vet .
       # Run all tests included with the application
-      - go test .
+      #- go test .
 
   build:
     commands:
       # Build the go application
-      - go build -o main
+      #- go build -o main
+      go install addtask
+      go install gettask
+      go install deletetask
       # Package the application with AWS SAM
       - aws cloudformation package --template-file template.yml --s3-bucket ${S3_BUCKET} --output-template-file packaged.yml
 
